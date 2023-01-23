@@ -51,11 +51,9 @@ function Dashboard() {
       <section className='content'>
 
         <div>
-        {matieres.length > 0 ? (
+        
           <ListMatieres matieres={matieres} />
-        ) : (
-          <h3>You have not set any matieres</h3>
-        )}
+        
         </div>
         <div >
             <UserEmploiContext.Provider value={matieres}>

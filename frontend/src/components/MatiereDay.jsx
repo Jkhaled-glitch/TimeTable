@@ -20,13 +20,13 @@ function MatiereItem({ matiere }) {
       ref={drag}
       className='matiere-day'
       style={{backgroundColor: matiere.color,
-              height: matiere.duration*(65)-5,
+              height: matiere.duration*(70)-5,
               display: isDragging ? "none":"flex"
             
     }}
     
     >
-      <h5>{matiere.duration}</h5>
+      <h5  >{matiere.duration}</h5>
       <h4>{matiere.title}</h4>
     
       <button onClick={() => navigate('/update/'+matiere._id)

@@ -30,18 +30,24 @@ function ListMatieres({matieres}) {
 return(
 <div className='matieres' 
           ref={drop}>
+            
 
     <button onClick={ ()=>navigate('/add')} className="btn-add">
       +
     </button>
+    
+    {matieres.length > 0 ? (
 
-            {matieres.map((matiere) => {
+            matieres.map((matiere) => {
               if(!days.includes(matiere.day))
                 return(
               <MatiereItem key={matiere._id} matiere={matiere} />
                 )
             }
-            )}
+            )
+    ): (
+      <h3>You have not set any matieres</h3>
+    )}
           </div>
           )
         }

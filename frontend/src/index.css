@@ -102,9 +102,10 @@ img{
 .matieres {
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
+  border: 4px solid red;
   border-radius: 10px;
   height: 90vh;
+  background-color: rgb(187, 187, 187);
 }
 .matiere {
   margin: 5px;
@@ -115,6 +116,7 @@ img{
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  border-radius: 10px;
   
 }
 
@@ -130,15 +132,18 @@ img{
   padding: 2.5px;
 }
 .matiere-day{
-  margin: 5px;
+  margin: 10px auto;
   padding:10px;
   position: relative;
   color:white;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
 }
 .matiere-day .edit {
   position: absolute;
@@ -147,6 +152,7 @@ img{
   cursor: pointer;
   background-color: transparent;
   border:transparent;
+ 
 }
 .matiere-day .edit:hover{
   padding: 2.5px;
@@ -175,10 +181,11 @@ img{
   display:grid;
   grid-template-columns: repeat(6,1fr);
   column-gap: 1px;
-  border: 2px solid blue;
+  border: 4px solid blue;
   border-radius: 10px;
-  padding: 10px;
+  padding: 0px;
   height: 90vh;
+  overflow: hidden;
 }
 .day{
   display: flex;
@@ -186,16 +193,19 @@ img{
   background-color: whitesmoke;
   height:100%;
   overflow-y: auto;
+  background-color:rgb(116, 116, 116);
   
   
 }
 .day .title{
   background-color: #2ae2e5;
-  margin:0px 1px ;
+  margin:3px 1px  0px;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  border-bottom: 2px solid black;
 }
 .btn-add{
   cursor: pointer;
@@ -211,11 +221,14 @@ img{
   background-color:  black; 
   color:  #ddd;
   padding: 13px;
-  border:2px solid #123456;
+  border:2px solid #ddd;
 }
 
 .form-group {
   margin-bottom: 10px;
+}
+.captcha{
+  margin-bottom: 20px;
 }
 
 

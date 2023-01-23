@@ -31,6 +31,7 @@ const registerUser = asyncHandler(async (req, res) => {
     name,
     email,
     password: hashedPassword,
+    tentative:"0",
   })
 
   if (user) {
@@ -55,17 +56,20 @@ const loginUser = asyncHandler(async (req, res) => {
   // Check for user email
   const user = await User.findOne({ email })
 
+  
   if (user && (await bcrypt.compare(password, user.password))) {
     res.json({
       _id: user.id,
       name: user.name,
       email: user.email,
+      
       token: generateToken(user._id),
     })
   } else {
     res.status(400)
     throw new Error('Invalid credentials')
   }
+  
 })
 
 // @desc    Get user data

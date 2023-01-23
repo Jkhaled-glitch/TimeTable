@@ -24,6 +24,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/add' element={<MatiereForm />} />
+            
             <Route path='/update/:id' element={<UpdateMatiere />} />
             
           </Routes>
