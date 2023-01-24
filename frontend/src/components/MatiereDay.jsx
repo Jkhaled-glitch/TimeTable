@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import Edit from '../edit.png'
 
 
+
+
+
+
 function MatiereItem({ matiere }) {
   const navigate =useNavigate()
   const [{isDragging},drag]=useDrag(()=>({
@@ -15,24 +19,28 @@ function MatiereItem({ matiere }) {
           }),
   }))
 
+  const Pause= (matiere.title=="Pause"&& matiere.description=="Pause" && matiere.duration=="1" && matiere.color=="#ddd" && matiere.code=="pause")
+
   return (
     <div  
       ref={drag}
       className='matiere-day'
       style={{backgroundColor: matiere.color,
-              height: matiere.duration*(70)-5,
-              display: isDragging ? "none":"flex"
+              display: isDragging ? "none":"flex",
+              gridRow:"span "+matiere.duration
             
     }}
-    
     >
-      <h5  >{matiere.duration}</h5>
-      <h4>{matiere.title}</h4>
+      <div className='duration'>{Pause==true ? '':matiere.duration+"H"} </div>
+      <div >{Pause ? '':matiere.title}</div>
+    {
+      Pause ? null:
     
       <button onClick={() => navigate('/update/'+matiere._id)
         } className='edit'>
         <img src={Edit} style={{width:"20px",height:"20px" }}/>
       </button>
+}
     </div>
   )
 }

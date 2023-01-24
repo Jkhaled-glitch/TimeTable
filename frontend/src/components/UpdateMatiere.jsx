@@ -8,18 +8,16 @@ import { getMatieres,deleteMatiere,createMatiere, reset } from '../features/mati
 function UpdateMatiere() {
 
     const params = useParams();
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
-       
-
-    const { user } = useSelector((state) => state.auth)
-   
-   
+    const { user } = useSelector((state) =>
+     state.auth
+     )
    const { matieres, isLoading, isError, message } = useSelector(
     (state) => state.matieres
-  )
+      )
   useEffect(() => {
-
     if (isError) {
       console.log(message)
     }
@@ -29,16 +27,10 @@ function UpdateMatiere() {
     }
 
     dispatch(getMatieres())
-  
-    
-   
-
     return () => {
       dispatch(reset())
     }
    
-    
-    
   }, [user, navigate, isError, message, dispatch])
 
   const onSubmit = (e,matiere) => {
@@ -82,7 +74,7 @@ function UpdateMatiere() {
      
    }
 
-   const [title, setTitle] = useState(null)
+    const [title, setTitle] = useState(null)
     const [description, setDescription] = useState(null)
     const [duration, setDuration] = useState(null)
     const [color, setColor] = useState(null)
@@ -123,6 +115,7 @@ function UpdateMatiere() {
             id='description'
             value={ description == null ? matiere.description : description}
             onChange={(e) => setDescription(e.target.value)}
+            required
           />
         </div>
 
@@ -134,6 +127,7 @@ function UpdateMatiere() {
            id="duration"
             value={ duration == null ? matiere.duration : duration}
             onChange={(e) => handleDuration(e) }
+            required
           />
           
         </div>
@@ -145,6 +139,7 @@ function UpdateMatiere() {
            id="code"
             value={  code == null ? matiere.code : code}
             onChange={(e) => setCode(e.target.value) }
+            required
           />
           
         </div>
@@ -161,6 +156,7 @@ function UpdateMatiere() {
             id="color"
             value={color == null ? matiere.color : color}
             onChange={(e) => setColor(e.target.value)}
+            
           
           />
   </div>

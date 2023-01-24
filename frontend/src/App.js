@@ -19,12 +19,12 @@ function App() {
           
           <Header />
           <Routes>
-            <Route path='/' element={<Dashboard />} />
+          <Route path='/' element={<Dashboard />} />
 
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/add' element={<MatiereForm />} />
-            
+
             <Route path='/update/:id' element={<UpdateMatiere />} />
             
           </Routes>

@@ -30,9 +30,11 @@ function DayItem({ day }) {
     dispatch(deleteMatiere(matiere._id))
     dispatch(createMatiere({ title:title,description:description,duration:duration,color:color,code:code,day:newDay,time:"null"}))
   }
+
    
 
     return (
+      
       <div className='day' 
       ref={drop}>
         <h6 className="title">  {day}</h6>

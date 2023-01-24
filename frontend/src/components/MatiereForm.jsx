@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useState,useEffect} from 'react'
+import { useDispatch,useSelector } from 'react-redux'
+import { useNavigate} from 'react-router-dom'
 import { createMatiere } from '../features/matieres/matiereSlice'
 
 function MatiereForm() {
@@ -9,17 +10,29 @@ function MatiereForm() {
   const [color, setColor] = useState("#6e3172")
   const [code,setCode]=useState('')
 
+  const navigate = useNavigate()
   const dispatch = useDispatch()
+
+  const { user } = useSelector((state) => state.auth)
+  
+
+  useEffect(() => {
+
+    if (!user) {
+      navigate('/login')
+    }
+  }, [user, navigate])
 
   const onSubmit = (e) => {
     e.preventDefault()
-
+      
     dispatch(createMatiere({ title:title,description:description,duration:duration,color:color,code:code,day:"null",time:"null"}))
     setTitle('')
     setDescription('')
     setDuration(1)
     setColor("#6e3172")
     setCode('')
+    navigate('/')
   }
   const handleDuration =(e)=>{
     let val = parseInt(e.target.value)
@@ -40,6 +53,7 @@ function MatiereForm() {
            id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            required
           />
         </div>
 
@@ -52,6 +66,7 @@ function MatiereForm() {
             id='description'
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            required
           />
         </div>
 
@@ -63,6 +78,7 @@ function MatiereForm() {
            id="duration"
             value={duration}
             onChange={(e) => handleDuration(e) }
+            required
           />
           
         </div>
@@ -74,6 +90,7 @@ function MatiereForm() {
            id="code"
             value={code}
             onChange={(e) => setCode(e.target.value) }
+            required
           />
           
         </div>
@@ -90,7 +107,7 @@ function MatiereForm() {
             id="color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
-          
+         
           />
   </div>
         
