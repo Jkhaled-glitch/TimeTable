@@ -19,7 +19,7 @@ const hours=["8H--9H","9H--10H","10H--11H","11H--12H","14H--15H","15H--16H","16H
         
         >
           
-          <h4>{hour}</h4>
+          <span>{hour}</span>
         
         </div>
            )

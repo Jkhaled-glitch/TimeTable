@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +6,9 @@
  
 }
 
-:root {
-  --color-bg: #1f1f38;
-  --color-bg-variant: #2c2c6c;
-  --color-primary: #4db5ff;
-  --color-primary-variant: rgba(77,181,255,.4);
-  --color-white: #fff;
-  --color-light: hsla(0,0%,100%,.6);
-  --container-width-lg: 75%;
-  --container-width-md: 86%;
-  --container-width-sm: 90%;
-  --transition: all 400ms ease;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
-  color:var(--color-white)
 }
 .indisplayed{
   display: none;
@@ -31,7 +16,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--color-white);
+  color: #000;
 }
 
 p {
@@ -59,19 +44,19 @@ h3 {
   margin: 0 auto;
   padding: 0 20px 20px;
   text-align: center;
-  background-color: var(--color-bg);
-  color:var(--color-white)
 }
 
-
+img{
+  background-color: rgba(0, 0, 255, 0);
+}
 
 .hour{
-    color: var(--color-white);
+  color: #000;
     display: flex;
     padding: auto;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-bg-variant);
+    background-color: #2ae2e5;
     border-radius: 10px;
 }
 
@@ -102,7 +87,7 @@ h3 {
 }
 
 .header ul li a:hover {
-  color:var(--color-white);
+  color: #777;
 }
 
 .header ul li a svg {
@@ -128,23 +113,19 @@ h3 {
   border: 4px solid red;
   border-radius: 10px;
   height: 100%;
-  background-color: var(--color-bg-variant);
+  background-color: rgb(187, 187, 187);
 }
 .matiere {
   margin: 5px;
   padding:10px;
   position: relative;
-  color:var(--color-white);
+  color:white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   border-radius: 10px;
-  flex-direction: column;
-  transition: var(--transition);
-}
-.matiere:hover{
-  border:2px solid var(--color-primary)
+  
 }
 
 .matiere .close {
@@ -154,7 +135,6 @@ h3 {
   cursor: pointer;
   background-color: transparent;
   border:transparent;
-  transition: var(--transition);
 }
 .matiere .close:hover{
   padding: 2.5px;
@@ -163,19 +143,15 @@ h3 {
   margin: 0 auto;
   padding:3px;
   position: relative;
-  color:var(--color-white);
+  color:white;
   display: flex;
   flex-wrap: wrap;
+
   align-items: center;
   flex-direction: column;
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
-  transition: var(--transition);
-}
-
-.matiere-day:hover{
-  border:2px solid var(--color-primary)
 }
 
 .matiere-day .duration{
@@ -191,16 +167,18 @@ h3 {
   cursor: pointer;
   background-color: transparent;
   border:transparent;
-  transition: var(--transition);
  
 }
 .matiere-day .edit:hover{
   padding: 2.5px;
 }
 
+.edit
+
 .form {
   width: 70%;
   margin: 0 auto;
+  border:2px solid white;
   border-radius: 10px;
   margin-top: 20px;
 
@@ -208,7 +186,7 @@ h3 {
 }
 .content {
   margin: 0 auto;
-  border:2px solid var(--color-bg-variant);
+  border:2px solid white;
   border-radius: 10px;
   margin-top: 20px;
   display: grid;
@@ -227,43 +205,44 @@ h3 {
   overflow: hidden;
 }
 .day{
-    background-color: var(--color-bg);
+    background-color: #f5f5f5;
+    background-color: #747474;
     flex-direction: column;
     height: 100%;
+   
     display: grid;
+    
     grid-template-rows: repeat(9,1fr);
     row-gap: 2px;
 }
   
 
 .day .title{
-  background-color: var(--color-bg-variant);
+  background-color: #2ae2e5;
   margin:5px 1px  0px;
   height: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border-bottom: 2px solid var(--color-white);
+  border-bottom: 2px solid black;
   padding: 20px;
-  color:var(--color-white)
 }
 .btn-add{
   cursor: pointer;
+  background-color: #ddd; 
+  color: black;
   font-size: 48px;
   padding: 12px;
-  border:3px solid var(--color-bg);
+  border:2px solid black;
   border-radius: 10px;
   margin: 4px 2px 0;
-  color: var(--color-light);
-  background-color: var(--color-bg);
-  transition: var(--transition);
 }
 .btn-add:hover{
-  background-color:  var(--color-bg-variant); 
-  color:   var(--color-white);
+  background-color:  black; 
+  color:  #ddd;
   padding: 13px;
-  border:2px solid var(--color-bg);
+  border:2px solid #ddd;
 }
 
 .form-group {
@@ -279,9 +258,7 @@ h3 {
 .form-group select {
   width: 100%;
   padding: 10px;
-  border: 2px solid var(--color-white);
-  background-color: var(--color-light);
-  color:#000000;
+  border: 1px solid #e6e6e6;
   border-radius: 5px;
   margin-bottom: 10px;
   font-family: inherit;
@@ -295,10 +272,10 @@ h3 {
 
 .btn {
   padding: 10px 20px;
-  border: 1px solid var(--color-primary);
+  border: 1px solid #000;
   border-radius: 5px;
-  background:var(--color-bg-variant);
-  color:var(--color-white);
+  background: #000;
+  color: #fff;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -314,8 +291,8 @@ h3 {
 }
 
 .btn-reverse {
-  background:var(--color-bg);
-  color:var(--color-white);
+  background: #fff;
+  color: #000;
 }
 
 .btn-block {
@@ -325,10 +302,29 @@ h3 {
 
 .btn:hover {
   transform: scale(0.98);
-  transition: var(--transition);
 }
 
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #000 transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
 
 @keyframes spin {
   0% {

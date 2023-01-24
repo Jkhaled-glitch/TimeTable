@@ -24,7 +24,7 @@ function ListMatieres({matieres}) {
     const duration = matiere.duration
     const color = matiere.color
     const code = matiere.code 
-    const Pause= (matiere.title=="Pause"&& matiere.description=="Pause" && matiere.duration=="1" && matiere.color=="#ddd" && matiere.code=="pause")
+    const Pause= (matiere.title=="Pause"&& matiere.description=="Pause" && matiere.duration=="1"  && matiere.code=="pause")
     dispatch(deleteMatiere(matiere._id))
     if(Pause!= true)
     dispatch(createMatiere({ title:title,description:description,duration:duration,color:color,code:code,day:"null",time:"null"}))
@@ -56,7 +56,7 @@ return(
      {matieres.length > 0 ? (
       
 
-    <Heure_Pause style={{display:matieres.length > 0 ? "flex":"none"}}  matiere={{ title:"Pause",description:"Pause",duration:"1",color:"#ddd",code:"pause",day:"null",time:"null"}} />
+    <Heure_Pause style={{display:matieres.length > 0 ? "flex":"none"}}  matiere={{ title:"Pause",description:"Pause",duration:"1",color:"#2c2c6c",code:"pause",day:"null",time:"null"}} />
     ): (
       null
       )}

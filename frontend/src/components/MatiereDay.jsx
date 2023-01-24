@@ -19,13 +19,13 @@ function MatiereItem({ matiere }) {
           }),
   }))
 
-  const Pause= (matiere.title=="Pause"&& matiere.description=="Pause" && matiere.duration=="1" && matiere.color=="#ddd" && matiere.code=="pause")
+  const Pause= (matiere.title=="Pause"&& matiere.description=="Pause" && matiere.duration=="1"  && matiere.code=="pause")
 
   return (
     <div  
       ref={drag}
       className='matiere-day'
-      style={{backgroundColor: matiere.color,
+      style={{backgroundColor:Pause ? "#0b0b10": matiere.color,
               display: isDragging ? "none":"flex",
               gridRow:"span "+matiere.duration
             
