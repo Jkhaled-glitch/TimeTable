@@ -7,7 +7,7 @@ function MatiereForm() {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [duration, setDuration] = useState(1)
-  const [color, setColor] = useState("#6e3172")
+  const [color, setColor] = useState("#653883")
   const [code,setCode]=useState('')
 
   const navigate = useNavigate()

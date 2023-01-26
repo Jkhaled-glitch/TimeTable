@@ -8,7 +8,7 @@ import { getMatieres,deleteMatiere,createMatiere, reset } from '../features/mati
 function UpdateMatiere() {
 
     const params = useParams();
-
+  
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { user } = useSelector((state) =>
@@ -48,8 +48,10 @@ function UpdateMatiere() {
 
     //Update ne fonctionne pas
     //dispatch(updateMatiere(matiere._id,matiereData))
+    
     dispatch(deleteMatiere(matiere._id))
     dispatch(createMatiere({ title:newTitle,description:newDescription,duration:newDuration,color:newColor,code:newCode,day:day,time:time}))
+    //
     navigate("/")
   }
   const handleDuration =(e)=>{
@@ -89,7 +91,8 @@ function UpdateMatiere() {
   
     matieres.map(matiere=>{
       
-      if(matiere._id == params.id)
+      if(matiere._id == params.id){
+      
       
       return(
     <section className='form'> 
@@ -169,7 +172,9 @@ function UpdateMatiere() {
       </form>
     </section>
       )
+      }
        })
+
     
   )
  
