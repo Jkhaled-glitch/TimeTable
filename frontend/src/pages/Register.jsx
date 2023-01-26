@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { FaUser } from 'react-icons/fa'
 import { register, reset } from '../features/auth/authSlice'
+import Refresh from '../ref.png'
 
 function Register() 
 {
@@ -15,6 +16,9 @@ function Register()
   })
 
   const { name, email, password, password2 } = formData
+  const [random,setRandom] =useState( Math.floor(Math.random() * (10000 - 1000) + 1000))
+  const [captcha,setCaptcha] = useState('')
+  const[errorCaptcha,setErrorCaptcha]=useState(false)
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -43,7 +47,9 @@ function Register()
   }
 
   const onSubmit = (e) => {
+  
     e.preventDefault()
+    if(random==captcha){
 
     if (password !== password2) {
       toast.error('Passwords do not match')
@@ -56,6 +62,12 @@ function Register()
 
       dispatch(register(userData))
     }
+  }else{
+    setErrorCaptcha(true)
+     setRandom( Math.floor(Math.random() * (10000 - 1000) + 1000))
+  } 
+
+
   }
 
 
@@ -118,6 +130,37 @@ function Register()
               required
             />
           </div>
+
+          <div className='form-group' >
+              <button 
+                  className='btn-refresh'
+                  type='button'
+                  onClick={()=>setRandom( Math.floor(Math.random() * (10000 - 1000) + 1000))}
+                  >
+                  <img src={Refresh} style={{width:"25px",height:"25px"}}/>
+              </button>
+              <div className='code-captcha'>
+                    {random}
+              </div>
+          </div>
+
+            <div className='form-group' >
+          <input
+              type='number'
+              className='form-control'
+              id='captcha'
+              name='captcha'
+              value={captcha}
+              placeholder='Enter Captcha'
+              onChange={(e)=>setCaptcha(e.target.value)}
+              style={{  border:errorCaptcha?"1px solid red":null}}
+              maxLength="4"
+              required
+            />
+              
+          </div>
+
+
           <div className='form-group'>
             <button type='submit' className='btn btn-block'>
               Submit

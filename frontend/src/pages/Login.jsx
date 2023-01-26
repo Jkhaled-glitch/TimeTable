@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
-import ReCAPTCHA from "react-google-recaptcha"
-import axios from 'axios'
+import Refresh from '../ref.png'
 
 
 
@@ -39,6 +38,7 @@ const  Login=()=> {
     dispatch(reset())
   }, [user, isError, isSuccess, message, navigate, dispatch])
 
+  
  
 
   const onSubmit =(e) => {
@@ -106,7 +106,19 @@ const  Login=()=> {
         
 
           <div className='form-group' >
-            <div>{random}</div>
+              <button 
+                  className='btn-refresh'
+                  type='button'
+                  onClick={()=>setRandom( Math.floor(Math.random() * (10000 - 1000) + 1000))}
+                  >
+                  <img src={Refresh} style={{width:"25px",height:"25px"}}/>
+              </button>
+              <div className='code-captcha'>
+                    {random}
+              </div>
+          </div>
+
+            <div className='form-group' >
           <input
               type='number'
               className='form-control'
@@ -116,6 +128,7 @@ const  Login=()=> {
               placeholder='Enter Captcha'
               onChange={(e)=>setCaptcha(e.target.value)}
               style={{  border:errorCaptcha?"1px solid red":null}}
+              maxLength="4"
               required
             />
               

@@ -292,6 +292,30 @@ h3 {
   display: block;
   margin: 0 0 5px 3px;
 }
+.code-captcha{
+  border: 2px solid #14205f;
+  box-shadow: 3px 3px 3px 3px #14205f;
+  display: inline-block;
+  font-size: x-large;
+  font-style: italic;
+  font-weight: 400;
+  height: 40px;
+  margin-bottom: 10px;
+  text-decoration: line-through;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transform: rotate(355deg);
+}
+.btn-refresh{
+  margin: 0 20px;
+  transition: var(--transition);
+}
+.btn-refresh:hover{
+  padding: 2px;
+}
+   
+
 
 .btn {
   padding: 10px 20px;
