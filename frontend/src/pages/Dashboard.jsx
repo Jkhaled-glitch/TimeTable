@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getMatieres, reset } from '../features/matieres/matiereSlice'
 import Timing from '../components/Timing'
 import ListMatieres from '../components/ListMatieres'
-import MatiereItem from '../components/MatiereItem'
+
 import {DndProvider} from 'react-dnd'
 import {HTML5Backend} from 'react-dnd-html5-backend'
 
